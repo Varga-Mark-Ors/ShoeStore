@@ -19,4 +19,5 @@ public class Accessory {
     Size size;
     Color color;
     int price;
+    String image;
 }

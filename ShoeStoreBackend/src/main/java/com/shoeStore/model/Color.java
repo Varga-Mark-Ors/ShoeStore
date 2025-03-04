@@ -8,5 +8,6 @@ public enum Color {
     Red,
     Green,
     Yellow,
-    Cream;
+    Cream,
+    Pink;
 }

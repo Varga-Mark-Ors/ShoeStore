@@ -31,4 +31,6 @@ public class Shoe {
     @CollectionTable(name = "number_of_shoe_sizes")
     @Column(name = "pieces")
     List<Integer> pieces;
+
+    String image;
 }
