@@ -1,41 +1,41 @@
 [
   {
-    "accessoryId" : "SCKSW",
+    "accessoryId" : "SCKSWM",
     "size" : "Medium",
     "color" : "White",
     "price" : 10,
     "image" : "images/whiteSocks1.png"
   },
   {
-    "accessoryId" : "SCKSW",
+    "accessoryId" : "SCKSWS",
     "size" : "Small",
     "color" : "White",
     "price" : 10,
     "image" : "images/whiteSocks1.png"
   },
   {
-    "accessoryId" : "SCKSW",
+    "accessoryId" : "SCKSWL",
     "size" : "Large",
     "color" : "White",
     "price" : 10,
     "image" : "images/whiteSocks1.png"
   },
   {
-    "accessoryId": "BCKPCK",
+    "accessoryId": "BCKPCKBM",
     "size": "Medium",
     "color": "Black",
     "price": 30,
     "image" : "images/blackBackpack1.png"
   },
   {
-    "accessoryId": "LCS",
+    "accessoryId": "LCSPS",
     "size": "Small",
     "color": "Pink",
     "price": 5,
     "image" : "images/pinkLaces1.png"
   },
   {
-    "accessoryId": "LCS",
+    "accessoryId": "LCSPL",
     "size": "Large",
     "color": "Pink",
     "price": 5,
