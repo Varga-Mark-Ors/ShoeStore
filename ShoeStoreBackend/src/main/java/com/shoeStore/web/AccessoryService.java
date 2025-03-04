@@ -26,9 +26,12 @@ public class AccessoryService implements AccessoryController{
     }
 
     @Override
-    public Accessory findById(String accessoryId) {
+    public List<Accessory> findById(String accessoryId) {
         LOGGER.info("Find accessory by ID");
-        return repository.findById(accessoryId)
-                .orElseThrow(() -> new IllegalArgumentException("Accessory does not exist"));
+        String prefix = accessoryId.substring(0, accessoryId.length() - 1);
+        return repository.findAll()
+                .stream()
+                .filter(accessory -> accessory.getAccessoryId().startsWith(prefix))
+                .toList();
     }
 }

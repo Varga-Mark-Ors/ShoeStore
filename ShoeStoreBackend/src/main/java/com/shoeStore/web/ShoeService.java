@@ -26,9 +26,12 @@ public class ShoeService implements ShoeController{
     }
 
     @Override
-    public Shoe findById(String shoeId) {
+    public List<Shoe> findById(String shoeId) {
         LOGGER.info("Find shoe by ID");
-        return repository.findById(shoeId)
-                .orElseThrow(() -> new IllegalArgumentException("Shoe does not exist"));
+        String prefix = shoeId.substring(0, shoeId.length() - 1);
+        return repository.findAll()
+                .stream()
+                .filter(shoe -> shoe.getShoeId().startsWith(prefix))
+                .toList();
     }
 }

@@ -15,5 +15,5 @@ public interface ShoeController {
     List<Shoe> findAll();
 
     @GetMapping("/shoes/{shoeId}")
-    Shoe findById(@PathVariable String shoeId);
+    List<Shoe> findById(@PathVariable String shoeId);
 }

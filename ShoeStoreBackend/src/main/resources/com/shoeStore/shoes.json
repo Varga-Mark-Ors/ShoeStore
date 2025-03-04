@@ -1,6 +1,6 @@
 [
   {
-    "shoeId": "CURTROYLWMA",
+    "shoeId": "CURTROYLMAW",
     "model" : "Court Royale",
     "price" : 50,
     "color" : "White",
@@ -11,7 +11,7 @@
     "image" : "images/whiteShoe1.png"
   },
   {
-    "shoeId": "AIRFRCEBFA",
+    "shoeId": "AIRFRCEFAB",
     "model" : "Air Force 1",
     "price" : 80,
     "color" : "Black",
@@ -22,7 +22,7 @@
     "image" : "images/blackShoe1.png"
   },
   {
-    "shoeId": "CURTROYLCMA",
+    "shoeId": "CURTROYLMAC",
     "model" : "Court Royale",
     "price" : 50,
     "color" : "Cream",
@@ -33,7 +33,7 @@
     "image" : "images/creamShoe1.png"
   },
   {
-    "shoeId": "SBDNKGMK",
+    "shoeId": "SBDNKMKG",
     "model" : "SB Dunk",
     "price" : 65,
     "color" : "Green",
@@ -44,7 +44,7 @@
     "image" : "images/greenShoe1.png"
   },
   {
-    "shoeId": "CURTROYLPFK",
+    "shoeId": "CURTROYLFKP",
     "model" : "Court Royale",
     "price" : 40,
     "color" : "Purple",

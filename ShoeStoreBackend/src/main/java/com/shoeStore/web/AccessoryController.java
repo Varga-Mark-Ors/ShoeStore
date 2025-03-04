@@ -14,5 +14,5 @@ public interface AccessoryController {
     List<Accessory> findAll();
 
     @GetMapping("/accessories/{accessoryId}")
-    Accessory findById(@PathVariable String accessoryId);
+    List<Accessory> findById(@PathVariable String accessoryId);
 }
