@@ -21,13 +21,13 @@ public class ShoeService implements ShoeController{
 
     @Override
     public List<Shoe> findAll() {
-        LOGGER.info("Find all Shoes");
+        LOGGER.info("Find all shoes");
         return repository.findAll();
     }
 
     @Override
     public Shoe findById(String shoeId) {
-        LOGGER.info("Find Shoe by ID");
+        LOGGER.info("Find shoe by ID");
         return repository.findById(shoeId)
                 .orElseThrow(() -> new IllegalArgumentException("Shoe does not exist"));
     }

@@ -1,6 +1,7 @@
 [
   {
     "accessoryId" : "SCKSWM",
+    "accessoryType" : "Socks",
     "size" : "Medium",
     "color" : "White",
     "price" : 10,
@@ -8,6 +9,7 @@
   },
   {
     "accessoryId" : "SCKSWS",
+    "accessoryType" : "Socks",
     "size" : "Small",
     "color" : "White",
     "price" : 10,
@@ -15,6 +17,7 @@
   },
   {
     "accessoryId" : "SCKSWL",
+    "accessoryType" : "Socks",
     "size" : "Large",
     "color" : "White",
     "price" : 10,
@@ -22,6 +25,7 @@
   },
   {
     "accessoryId": "BCKPCKBM",
+    "accessoryType" : "Backpack",
     "size": "Medium",
     "color": "Black",
     "price": 30,
@@ -29,6 +33,7 @@
   },
   {
     "accessoryId": "LCSPS",
+    "accessoryType" : "Laces",
     "size": "Small",
     "color": "Pink",
     "price": 5,
@@ -36,6 +41,7 @@
   },
   {
     "accessoryId": "LCSPL",
+    "accessoryType" : "Laces",
     "size": "Large",
     "color": "Pink",
     "price": 5,
