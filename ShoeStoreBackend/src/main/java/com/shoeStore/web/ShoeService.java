@@ -1,14 +1,17 @@
 package com.shoeStore.web;
 
+import com.shoeStore.model.Color;
 import com.shoeStore.model.Shoe;
 import com.shoeStore.repository.ShoeRepository;
 import lombok.AllArgsConstructor;
+import lombok.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -32,6 +35,34 @@ public class ShoeService implements ShoeController{
         return repository.findAll()
                 .stream()
                 .filter(shoe -> shoe.getShoeId().startsWith(prefix))
+                .toList();
+    }
+
+    @Override
+    public List<Shoe> search(@NonNull Optional<String> model,
+                             @NonNull Optional<Integer> sum1,
+                             @NonNull Optional<Integer> sum2,
+                             @NonNull Optional<Boolean> gender,
+                             @NonNull Optional<Boolean> adults,
+                             @NonNull Optional<Color> color,
+                             @NonNull Optional<Integer> size) {
+        return repository.findAll()
+                .stream()
+                .filter(shoe -> model.map(s -> s.equals(shoe.getModel())).orElse(true))
+                .filter(shoe -> gender.map(gender1 -> gender1 == shoe.isGender()).orElse(true))
+                .filter(shoe -> adults.map(adults1 -> adults1 == shoe.isAdults()).orElse(true))
+                .filter(shoe -> color.map(color1 -> color1 == shoe.getColor()).orElse(true))
+                .filter(shoe -> {
+                    int price = shoe.getPrice();
+                    return sum1.map(min -> price >= min).orElse(true) &&
+                            sum2.map(max -> price <= max).orElse(true);
+                })
+                .filter(shoe -> size.map(s -> {
+                    List<Integer> sizes = shoe.getSize();
+                    List<Integer> pieces = shoe.getPieces();
+                    int index = sizes.indexOf(s);
+                    return index >= 0 && index < pieces.size() && pieces.get(index) > 0;
+                }).orElse(true))
                 .toList();
     }
 }
