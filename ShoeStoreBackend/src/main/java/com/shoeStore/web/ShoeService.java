@@ -16,10 +16,9 @@ import java.util.Optional;
 @RestController
 @AllArgsConstructor
 @Service
-public class ShoeService implements ShoeController{
+public class ShoeService implements ShoeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShoeService.class);
-
     private ShoeRepository repository;
 
     @Override
@@ -30,7 +29,8 @@ public class ShoeService implements ShoeController{
 
     @Override
     public List<Shoe> findById(String shoeId) {
-        LOGGER.info("Find shoe by ID");
+        LOGGER.info("Find shoe by ID: {}", shoeId);
+
         String prefix = shoeId.substring(0, shoeId.length() - 1);
         return repository.findAll()
                 .stream()
@@ -46,12 +46,17 @@ public class ShoeService implements ShoeController{
                              @NonNull Optional<Boolean> adults,
                              @NonNull Optional<Color> color,
                              @NonNull Optional<Integer> size) {
-        return repository.findAll()
-                .stream()
+
+        LOGGER.info("Starting shoe search...");
+
+        List<Shoe> allShoes = repository.findAll();
+        LOGGER.info("Total shoes before filtering: {}", allShoes.size());
+
+        return allShoes.stream()
                 .filter(shoe -> model.map(s -> s.equals(shoe.getModel())).orElse(true))
-                .filter(shoe -> gender.map(gender1 -> gender1 == shoe.isGender()).orElse(true))
-                .filter(shoe -> adults.map(adults1 -> adults1 == shoe.isAdults()).orElse(true))
-                .filter(shoe -> color.map(color1 -> color1 == shoe.getColor()).orElse(true))
+                .filter(shoe -> gender.map(g -> g == shoe.isGender()).orElse(true))
+                .filter(shoe -> adults.map(a -> a == shoe.isAdults()).orElse(true))
+                .filter(shoe -> color.map(c -> c == shoe.getColor()).orElse(true))
                 .filter(shoe -> {
                     int price = shoe.getPrice();
                     return sum1.map(min -> price >= min).orElse(true) &&

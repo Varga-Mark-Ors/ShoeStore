@@ -22,7 +22,6 @@ export const Navbar = () => {
         {["Men", "Women", "Kids", "Accessories"].map((item, index) => (
           <li key={index} className="relative group cursor-pointer">
             <Link>{item}</Link>
-            {/* Fekete csík hover esetén */}
             <span className="absolute left-0 bottom-[-3px] w-full h-[2px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </li>
         ))}

@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 export const UpperBar = () => {
   return (
-    <div className="w-full h-[45px] flex justify-between items-center px-8 bg-slate-400 text-black hidden md:flex">
+    <div className="w-full h-[45px] justify-between items-center px-8 bg-slate-400 text-black hidden md:flex">
       {/* Logo */}
       <div>
         <img src={Logo} alt="Logo Image" style={{ width: "40px" }} />
